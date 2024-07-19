@@ -2,8 +2,6 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import P from '../../atoms/P/P';
-
 interface IBreadcrumbs {
   children?: React.ReactNode;
   className?: string;
@@ -12,11 +10,9 @@ interface IBreadcrumbs {
 
 const Breadcrumbs = ({ ...props }: IBreadcrumbs) => {
   return (
-    <div className="flex gap-2 items-center text-[#5A5A5F]">
+    <div className="font-poppins flex gap-2 items-center text-[#5A5A5F]">
       <button type="button" {...props}>
-        <P variant="s" strong>
-          Breadcrumbs 1{' '}
-        </P>
+        Breadcrumbs 1{' '}
       </button>
       <Image
         src="/arrowRight.svg"
