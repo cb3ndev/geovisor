@@ -13,8 +13,5 @@ export default meta;
 type Story = StoryObj<typeof HomeTemplate>;
 
 export const Default: Story = {
-  args: {
-    dynamicTitle: 'Test Title',
-    showInstagram: false,
-  },
+  args: {},
 };
