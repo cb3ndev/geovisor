@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
+import HomeLayout from '@components/layout/HomeLayout';
 import HomeTemplate from '@components/modules/home/components/UI/templates/HomeTemplate';
-import { useHome } from '@components/modules/home/hooks/useHome';
 
 const HomePage = () => {
-  const { dynamicTitle, showInstagram } = useHome();
-
   return (
     <div>
-      <HomeTemplate dynamicTitle={dynamicTitle} showInstagram={showInstagram} />
+      <HomeTemplate />
     </div>
   );
+};
+
+HomePage.getLayout = function getLayout(page: ReactElement) {
+  return <HomeLayout>{page}</HomeLayout>;
 };
 
 export default HomePage;

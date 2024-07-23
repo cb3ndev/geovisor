@@ -13,13 +13,13 @@ import {
 
 const SheetDefault = () => {
   return (
-    <Sheet direction="left">
+    <Sheet direction="right">
       <SheetTrigger asChild>
         <button>Open Sheet</button>
       </SheetTrigger>
       <SheetPortal>
         <SheetOverlay />
-        <SheetContent side="left">
+        <SheetContent side="right">
           <div className="p-4 bg-white flex-1 h-full">
             <div className="max-w-md mx-auto">
               <SheetTitle>Unstyled drawer for React.</SheetTitle>
