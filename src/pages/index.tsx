@@ -6,7 +6,29 @@ import HomeTemplate from '@components/modules/home/components/UI/templates/HomeT
 const HomePage = () => {
   return (
     <div>
-      <HomeTemplate />
+      <HomeTemplate
+        renderListOfLayers={
+          <div>
+            <ul>
+              <li>Layer 1</li>
+              <li>Layer 2</li>
+              <li>Layer 3</li>
+              <li>Layer 4</li>
+            </ul>
+          </div>
+        }
+        renderListOfBaseMaps={
+          <div>
+            <ul>
+              <li>Map 1</li>
+              <li>Map 2</li>
+              <li>Map 3</li>
+              <li>Map 4</li>
+            </ul>
+          </div>
+        }
+        renderMap={<h1>This is a map</h1>}
+      />
     </div>
   );
 };

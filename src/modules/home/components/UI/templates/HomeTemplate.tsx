@@ -19,7 +19,17 @@ import {
   SheetTrigger,
 } from '@components/components/UI/organisms/Sheet';
 
-const HomeTemplate = () => {
+interface Props {
+  renderListOfLayers: React.ReactNode;
+  renderListOfBaseMaps: React.ReactNode;
+  renderMap?: React.ReactNode;
+}
+
+const HomeTemplate = ({
+  renderListOfLayers,
+  renderListOfBaseMaps,
+  renderMap,
+}: Props) => {
   return (
     <div className="max-w-[1440px]">
       <div className="sm:flex sm:justify-end sm:gap-8 sm:p-4 hidden">
@@ -36,6 +46,7 @@ const HomeTemplate = () => {
               <div className="p-4 bg-white flex-1 h-full">
                 <div className="max-w-md mx-auto">
                   <SheetTitle>Lista de capas</SheetTitle>
+                  {renderListOfLayers}
                 </div>
               </div>
             </SheetContent>
@@ -54,6 +65,7 @@ const HomeTemplate = () => {
               <div className="p-4 bg-white flex-1 h-full">
                 <div className="max-w-md mx-auto">
                   <SheetTitle>Mapas base</SheetTitle>
+                  {renderListOfBaseMaps}
                 </div>
               </div>
             </SheetContent>
@@ -74,6 +86,7 @@ const HomeTemplate = () => {
                 <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
                 <div className="max-w-md mx-auto">
                   <DrawerTitle>Lista de capas</DrawerTitle>
+                  {renderListOfLayers}
                 </div>
               </div>
             </DrawerContent>
@@ -92,12 +105,14 @@ const HomeTemplate = () => {
                 <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
                 <div className="max-w-md mx-auto">
                   <DrawerTitle>Mapas base</DrawerTitle>
+                  {renderListOfBaseMaps}
                 </div>
               </div>
             </DrawerContent>
           </DrawerPortal>
         </Drawer>
       </div>
+      <div>{renderMap}</div>
     </div>
   );
 };
