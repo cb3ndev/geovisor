@@ -4,6 +4,7 @@ import AngleRightIcon from './AngleRightIcon';
 import BarsIcon from './BarsIcon';
 import CaretDownIcon from './CaretDownIcon';
 import CaretRightIcon from './CaretRightIcon';
+import CheckIcon from './CheckIcon';
 import LayerGroupIcon from './LayerGroupIcon';
 import MagnifyingGlassIcon from './MagnifyingGlassIcon';
 import MapIcon from './MapIcon';
@@ -25,6 +26,7 @@ const Icons = () => {
           <LayerGroupIcon className="w-10 h-10 fill-green-500" />
           <BarsIcon className="w-10 h-10" />
           <MapIcon className="w-10 h-10" />
+          <CheckIcon className="w-10 h-10" />
         </div>
       </section>
       <section className="border">
