@@ -19,8 +19,8 @@ interface Props {
 
 const ListOfOptionsTemplate = ({ layers, maps, onCheckedChange }: Props) => {
   return (
-    <div className="max-w-[1440px]">
-      <div className="flex items-center justify-end p-4 gap-4">
+    <div className="w-full bg-white opacity-75">
+      <div className="flex items-center justify-end p-4 gap-4 max-w-[1440px]">
         <ListOfOptionsSheet
           title="Lista de capas"
           options={layers}

@@ -58,7 +58,7 @@ export const SheetContent = React.forwardRef<
   <DrawerPrimitive.Content
     {...props}
     className={cn(
-      'bg-white flex flex-col rounded-t-[10px] h-full w-[80%] md:w-[400px] mt-24 fixed bottom-0',
+      'bg-white flex flex-col rounded-t-[10px] h-full w-[80%] md:w-[400px] mt-24 fixed bottom-0 z-20',
       className,
       { 'right-0': side === 'right' },
       { 'left-0': side === 'left' },

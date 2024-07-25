@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import HomeLayout from '@components/layout/HomeLayout';
+import GeovisorMap from '@components/modules/home/components/UI/organisms/GeovisorMap';
 import ListOfOptionsTemplate from '@components/modules/home/components/UI/templates/ListOfOptionsTemplate';
 
 interface CheckboxProps {
@@ -27,11 +28,14 @@ const MAPS: CheckboxProps[] = [
 const HomePage = () => {
   return (
     <div>
-      <ListOfOptionsTemplate
-        layers={LAYERS}
-        maps={MAPS}
-        onCheckedChange={() => {}}
-      />
+      <div className="fixed top-0 left-0 right-0 z-10">
+        <ListOfOptionsTemplate
+          layers={LAYERS}
+          maps={MAPS}
+          onCheckedChange={() => {}}
+        />
+      </div>
+      <GeovisorMap />
     </div>
   );
 };
