@@ -1,12 +1,7 @@
 import React, { ReactElement } from 'react';
 
-import {
-  Checkbox,
-  CheckboxIndicator,
-} from '@components/components/UI/atoms/Checkbox';
-import CheckIcon from '@components/components/UI/atoms/Icons/CheckIcon';
 import HomeLayout from '@components/layout/HomeLayout';
-import HomeTemplate from '@components/modules/home/components/UI/templates/HomeTemplate';
+import ListOfOptionsTemplate from '@components/modules/home/components/UI/templates/ListOfOptionsTemplate';
 
 interface CheckboxProps {
   id: string;
@@ -22,35 +17,20 @@ const LAYERS: CheckboxProps[] = [
   { id: 'c4', label: 'Layer 4', checked: false },
 ];
 
+const MAPS: CheckboxProps[] = [
+  { id: 'm1', label: 'Map 1', checked: true },
+  { id: 'm2', label: 'Map 2', checked: true },
+  { id: 'm3', label: 'Map 3', checked: false },
+  { id: 'm4', label: 'Map 4', checked: false },
+];
+
 const HomePage = () => {
   return (
     <div>
-      <HomeTemplate
-        renderListOfLayers={
-          <form>
-            {LAYERS.map((layer) => (
-              <div key={layer.id} className="flex items-center gap-2">
-                <Checkbox id={layer.id} checked={layer.checked}>
-                  <CheckboxIndicator>
-                    <CheckIcon className="w-4 h-4 fill-white" />
-                  </CheckboxIndicator>
-                </Checkbox>
-                <label htmlFor="c1">{layer.label}</label>
-              </div>
-            ))}
-          </form>
-        }
-        renderListOfBaseMaps={
-          <div>
-            <ul>
-              <li>Map 1</li>
-              <li>Map 2</li>
-              <li>Map 3</li>
-              <li>Map 4</li>
-            </ul>
-          </div>
-        }
-        renderMap={<h1>This is a map</h1>}
+      <ListOfOptionsTemplate
+        layers={LAYERS}
+        maps={MAPS}
+        onCheckedChange={() => {}}
       />
     </div>
   );
