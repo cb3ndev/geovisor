@@ -11,7 +11,7 @@ const DynamicMap = () => {
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            esriConfig.apiKey = "13a89a02e8fd4a5d8fd1e6a29c440489"; // Reemplaza con tu API key
+            esriConfig.apiKey = ""; // Reemplaza con tu API key
 
             // Registrar los componentes de ArcGIS
             defineMapElements(window, {
@@ -21,7 +21,7 @@ const DynamicMap = () => {
             if (mapDiv.current) {
                 const webmap = new WebMap({
                     portalItem: {
-                        id: "WRefFZA3FBE3nt1v" // Reemplaza con tu ID de elemento de ArcGIS
+                        id: "" // Reemplaza con tu ID de elemento de ArcGIS
                     }
                 });
 
