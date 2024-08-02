@@ -2,8 +2,8 @@
 import React, { useEffect, useRef } from 'react';
 
 import esriConfig from '@arcgis/core/config';
+import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
-import WebMap from '@arcgis/core/WebMap';
 import { defineCustomElements as defineMapElements } from '@arcgis/map-components/dist/loader';
 
 const DynamicMap = () => {
@@ -11,23 +11,22 @@ const DynamicMap = () => {
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            esriConfig.apiKey = ""; // Reemplaza con tu API key
-
+            esriConfig.apiKey = process.env.ARCGIS_API_KEY || "";
             // Registrar los componentes de ArcGIS
             defineMapElements(window, {
                 resourcesUrl: "https://js.arcgis.com/map-components/4.30/assets"
             });
 
             if (mapDiv.current) {
-                const webmap = new WebMap({
-                    portalItem: {
-                        id: "" // Reemplaza con tu ID de elemento de ArcGIS
-                    }
+                const map = new Map({
+                    basemap: "satellite" // Aquí seleccionas el mapa base, se probo antes "topo-vector"
                 });
 
                 const view = new MapView({
                     container: mapDiv.current!,
-                    map: webmap
+                    map: map,
+                    center: [-100, 40], // Longitud y latitud del centro del mapa
+                    zoom: 4 // Nivel de zoom
                 });
 
                 return () => {
