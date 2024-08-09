@@ -13,6 +13,8 @@ module.exports = {
       },
       colors: {
         primary: '#004EDA',
+        'ocean-green': "#088a8a",
+        'soft-aqua': "#90aeae"
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
