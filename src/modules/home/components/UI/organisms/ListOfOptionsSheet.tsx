@@ -38,7 +38,7 @@ const ListOfOptionsSheet = ({
       <SheetPortal>
         <SheetOverlay />
         <SheetContent side="right">
-          <div className="p-4 bg-white flex-1 h-full">
+          <div className="p-4 bg-soft-aqua flex-1 h-full">
             <div className="max-w-md mx-auto">
               <SheetTitle>{title}</SheetTitle>
               <form>
